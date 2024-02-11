@@ -242,7 +242,7 @@ h2 span.active {
 }
 
 
-#timer{
+/* #timer{
   position: absolute;
   top: 30%;
   left: 50%;
@@ -251,10 +251,10 @@ h2 span.active {
 }
 #textContainer {
   position: absolute;
-  top: 25%;
+  top: 150px;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* color: aliceblue; */
+
   color: rgb(255, 255, 0);
   font-size: 20px;
   display: flex;
@@ -271,6 +271,58 @@ h2 span.active {
    word-wrap: break-word; 
    max-width: 600px; 
 line-height: 30px;   
+  }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid white;
+  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+} */
+
+#timer{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: transparent;
+}
+#textContainer {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 0);
+  font-size: 20px;
+  line-height: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+  text-align: center;
+
+   /* font-family: 'Arial', sans-serif; */
+   white-space: normal; /* Cho phép xuống dòng tự động */
+   word-wrap: break-word; /* Bẻ từ khi cần */
+   max-width: 600px; /* Đặt kích thước tối đa cho mỗi dòng */
   }
 @keyframes typing {
   from {
