@@ -1,0 +1,295 @@
+*{box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+input {
+  line-height: normal;
+}
+label,
+button {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+.overlay-content {
+  line-height: 30px;
+}
+
+.player {
+  /* background-color: white; */
+  padding: 30px;
+}
+
+.player-box {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 20px;
+  max-width: 300px;
+  margin: 0 auto 20px;
+  margin-top: 200px;
+}
+
+.player-media {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 100rem;
+  margin-bottom: 25px;
+}
+.player-media:before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-color: rgb(200,134,134);
+  border-radius: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.player-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.player-image.is-playing {
+  animation: rotate 10s forwards infinite linear;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.progress {
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.player-number {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.player-tool {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-play {
+  color: #2b48d9;
+  width: 45px;
+  height: 45px;
+  border-radius: 100rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0 0 0 10px rgba(242, 243, 244, 0.5);
+  font-size: 16px;
+  margin: 0 30px;
+}
+
+.player-next,
+.player-prev {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.progress {
+  width: 100%;
+  position: relative;
+}
+
+.bar {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: #d3d3d3;
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 100rem;
+  background-color: #2b48d9;
+  box-shadow: 0 0 0 5px white, 0 0 0 6px #ccc;
+}
+
+.bar::-moz-range-thumb {
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  border-radius: 100rem;
+  background-color: #2b48d9;
+  box-shadow: 0 0 0 5px white, 0 0 0 6px #ccc;
+}
+
+.fa-repeat{
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 20px;
+}
+.fa-repeat-active {
+  color: #2b48d9; /* Màu cho trạng thái lặp lại đã được bật */
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 20px;
+}
+h2 {
+    position: absolute; /* Đặt vị trí tuyệt đối để chữ "Happy New Year" có thể được định vị độc lập với nền */
+    top: 50px; /* Đặt vị trí ở trên cùng */
+    left: 50%; /* Đặt vị trí giữa trái */
+    transform: translateX(-50%); /* Dịch chữ về giữa theo chiều ngang */
+    font-size: 2.5vw;
+   
+ 
+    color: white;
+    z-index: 1; /* Đảm bảo chữ nằm trên phần nền */
+}
+
+
+h2 span {
+    /* color: transparent; */
+    text-shadow: none;
+    opacity: 0.8;
+}
+
+h2 span.active {
+    animation: animate 2s linear forwards;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0.9;
+    }
+    10% {
+        opacity: 1;
+        color: #fff;
+        filter: blur(2px) hue-rotate(0deg);
+        text-shadow: 0 0 10px #001aff,
+        0 0 20px #0063ff,
+        0 0 40px #0063ff,
+        0 0 80px #0063ff,
+        0 0 120px #0063ff,
+        0 0 200px #0063ff,
+        0 0 300px #0063ff,
+        0 0 4000px #0063ff;
+    }
+    90% {
+        opacity: 1;
+        color: #fff;
+        filter: blur(2px) hue-rotate(360deg);
+        text-shadow: 0 0 10px #001aff,
+        0 0 20px #0063ff,
+        0 0 40px #0063ff,
+        0 0 80px #0063ff,
+        0 0 120px #0063ff,
+        0 0 200px #0063ff,
+        0 0 300px #0063ff,
+        0 0 4000px #0063ff;
+    }
+    100% {
+        opacity: 0.9;
+    }
+}
+
+
+#timer{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: transparent;
+}
+#textContainer {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* color: aliceblue; */
+  color: rgb(255, 255, 0);
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+  text-align: center;
+
+   white-space: normal; 
+   word-wrap: break-word; 
+   max-width: 600px; 
+line-height: 30px;   
+  }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid white;
+  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+}

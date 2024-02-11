@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>MP3 player</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="./app.css" />
+</head>
+
+<body>
+  <div id="overlay"
+    style="display: block; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 1); z-index: 9999;">
+    <div class="overlay-content"
+      style="position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; ">
+      <p>A little music for the new year and a few things I want to say</p>
+      <button onclick="startMusic()">OK</button>
+    </div>
+  </div>
+  <div id="textContainer">Hi</div>
+  <div id="timer"></div>
+  <div class="word">
+    <h2>
+      <span class="char" style="--i:1;">H</span>
+      <span class="char" style="--i:2;">a</span>
+      <span class="char" style="--i:3;">p</span>
+      <span class="char" style="--i:4;">p</span>
+      <span class="char" style="--i:5;">y</span>
+      <span class="char" style="--i:6; margin-left: 3vw;">N</span>
+      <span class="char" style="--i:7;">e</span>
+      <span class="char" style="--i:8;">w</span>
+      <span class="char" style="--i:9; margin-left: 3vw;">Y</span>
+      <span class="char" style="--i:10;">e</span>
+      <span class="char" style="--i:11;">a</span>
+      <span class="char" style="--i:12;">r</span>
+    </h2>
+  </div>
+  <div class="player">
+    <div class="player-box">
+      <div class="player-media">
+        <img src="peach_blossoms_2.jpg" alt="" class="player-image" />
+      </div>
+      <div class="progress">
+        <input type="range" id="progress-bar" min="0" max="" value="0" class="bar" />
+        <audio src="./files/holo.mp3" id="song"></audio>
+      </div>
+      <div class="player-number">
+        <span class="player-duration">0:00</span>
+        <span class="player-remaining">0:00</span>
+      </div>
+    </div>
+    <div class="player-tool">
+      <i class="fa fa-backward player-prev"></i>
+      <i class="fa fa-play player-play"></i>
+      <i class="fa fa-forward player-next"></i>
+      <i class="fa fa-repeat player-repeat"></i>
+    </div>
+  </div>
+
+  <audio id="backgroundMusic" style="display: none;" controls>
+    <source src="./files/holo.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const spans = document.querySelectorAll('.char');
+
+    let index = 0;
+    setInterval(() => {
+      spans.forEach(span => span.classList.remove('active'));
+      spans[index].classList.add('active');
+      index = (index + 1) % spans.length;
+    }, 500);
+
+  </script>
+
+  <style>
+    body {
+      background-image: url('Tet.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+    }
+  </style>
+
+
+  <script src="starter.js"></script>
+</body>
+
+</html>
