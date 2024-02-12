@@ -44,8 +44,10 @@ body {
 }
 
 .player {
-  /* background-color: white; */
-  padding: 30px;
+
+  display: block;
+  /* padding: 5%; */
+  margin-top: 20%;
 }
 
 .player-box {
